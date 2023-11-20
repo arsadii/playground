@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: "Outfit", "sans-serif";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  transition: all 300ms;
+}
+
+nav.scrolled {
+  background-color: white;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.hero {
+  height: 500px;
+  width: 100vw;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.461),
+    transparent
+  );
+}
+
+.hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
